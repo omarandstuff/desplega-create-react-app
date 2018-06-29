@@ -1,0 +1,31 @@
+{
+  "name": "desplega-create-react-app",
+  "version": "1.0.0",
+  "description": "Desplega module to deploy a react app to a genearal porpuse virtual server.",
+  "license": "MIT",
+  "homepage": "https://github.com/omarandstuff/desplega-create-react-app#readme",
+  "repository": "github:omarandstuff/desplega-create-react-app",
+  "bugs": "https://github.com/omarandstuff/desplega-create-react-app/issues",
+  "author": "David De Anda <omarandstuff@gmail.com> (https://github.com/omarandstuff)",
+  "scripts": {
+    "format": "prettier --write \"{src,tests}/**/*.js\"",
+    "format:check": "prettier --list-different \"{src,tests}/**/*.js\"",
+    "prepare": "yarn format:check"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "files": [
+    "src"
+  ],
+  "main": "src/index.js",
+  "keywords": [
+    "create",
+    "react",
+    "app",
+    "automate",
+    "ssh",
+    "pipeline"
+  ]
+}
