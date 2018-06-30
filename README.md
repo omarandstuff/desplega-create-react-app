@@ -1,4 +1,5 @@
 # Desplega create react app
+[![npm version](https://badge.fury.io/js/desplega-create-react-app.svg)](https://www.npmjs.com/package/desplega-create-react-app)
 
 This is a prebuilt deplega configuration to deploy an app generated with [create react app](https://github.com/facebook/create-react-app). Using the branch master of the repository that holds your react app.
 
@@ -21,10 +22,12 @@ module.exports = desplegaCreateReactApp({
   host: "yourdomain.com | your:IP",
   username: "deploy",
   deployTo: "apps/react-app",
+  branchName: "master",
   repoUrl: "https://github.com/yourusername/yourreactapp",
   limitReleaseCount: 5,
   withNginx: true,
   serverName: "react-app.yourdomain.com",
+  asDefault: true
 });
 
 ```
@@ -32,11 +35,14 @@ module.exports = desplegaCreateReactApp({
 ### host
 Remote server to connect and deploy your app
 
-### username
+### username [root]
 User name to connect in the remote server
 
 ### deployTo
 Where to put the files of your app
+
+### branchName [master]
+Source branch to use
 
 ### repoUrl
 Repository to clone and process
@@ -44,8 +50,11 @@ Repository to clone and process
 ### limitReleaseCount
 You can cache older version of the deployed apps just in case.
 
-### withNginx
+### withNginx [false]
 Installs and configure nginx to serve your app
 
 ### serverName
 Configure the nginx virtual server to leasen to this domain | ip
+
+### asDefault [false]
+if true it unlinks the default nginx conf file and set the app server as the default server
