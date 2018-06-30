@@ -10,7 +10,7 @@ module.exports = (currentPath, baseServerFile, username, host, serverName) => {
       {
         remote: true,
         title: 'install nginx',
-        command: 'sudo apt-get install nginx'
+        command: 'sudo apt-get -y install nginx'
       },
       {
         title: 'transfer base conf',
