@@ -8,7 +8,7 @@ const configNginx = require('./components/configNginx.stage')
 const { generateBuildName } = require('./utils')
 
 module.exports = config => {
-  const { host, username, serverName, deployTo, repoUrl, limitReleaseCount, withNginx } = config
+  const { host, username, serverName, branchName, deployTo, repoUrl, limitReleaseCount, withNginx, asDefault } = config
 
   const buildName = generateBuildName()
   const repoPath = 'deployments/repo'
@@ -18,7 +18,7 @@ module.exports = config => {
   const baseServerFile = `${__dirname}/server_files/server.conf`
   const stages = []
 
-  stages.push(checkout(repoUrl, repoPath))
+  stages.push(checkout(repoUrl, repoPath, branchName))
   stages.push(generateBuild(repoPath))
   stages.push(archiveRelsease(repoPath, localReleasesPath, buildName))
   stages.push(transferRelease(releasesPath, localReleasesPath, buildName, username, host))
@@ -26,7 +26,7 @@ module.exports = config => {
   stages.push(cleanReleases(releasesPath, limitReleaseCount))
 
   if (withNginx) {
-    stages.push(configNginx(currentPath, baseServerFile, username, host, serverName))
+    stages.push(configNginx(currentPath, baseServerFile, username, host, serverName, asDefault))
   }
 
   return {
