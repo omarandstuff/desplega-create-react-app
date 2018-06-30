@@ -1,6 +1,6 @@
 {
   "name": "desplega-create-react-app",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "description": "Desplega module to deploy a react app to a genearal porpuse virtual server.",
   "license": "MIT",
   "homepage": "https://github.com/omarandstuff/desplega-create-react-app#readme",
@@ -12,9 +12,8 @@
     "format:check": "prettier --list-different \"{src,tests}/**/*.js\"",
     "prepare": "yarn format:check"
   },
-  "dependencies": {
-  },
   "devDependencies": {
+    "prettier": "^1.13.5"
   },
   "files": [
     "src"
