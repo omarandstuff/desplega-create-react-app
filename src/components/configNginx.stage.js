@@ -19,7 +19,7 @@ module.exports = (currentPath, baseServerFile, username, host, serverName) => {
       {
         remote: true,
         title: 'process conf',
-        command: `SERVER_NAME=${serverName} APP_PATH=/home/${username}/${currentPath} envsubst < server.conf > ${serverName}.conf`
+        command: `APP_PATH=/home/${username}/${currentPath} envsubst < server.conf > ${serverName}.conf`
       },
       {
         remote: true,
