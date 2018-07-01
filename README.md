@@ -54,7 +54,7 @@ You can cache older version of the deployed apps just in case.
 Installs and configure nginx to serve your app
 
 ### serverName
-Configure the nginx virtual server to leasen to this domain | ip
+Configure the nginx virtual server to listen to this domain | ip
 
 ### asDefault [false]
 if true it unlinks the default nginx conf file and set the app server as the default server
